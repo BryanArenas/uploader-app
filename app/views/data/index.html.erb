@@ -15,8 +15,8 @@
         <%= form_with(model: @datum) do |f| %>
             <div class="flex flex-col items-center my-4">
             <p class="">Remove rows:</p>
-            <div class="my-2 mx-2"><%= select_tag(:header, options_for_select([['Company Name', 0],['Country', 1], ['Region', 2], ['Description', 3], ['Last Funding', 4], ['Total Funding (USD)', 5]])) %></div>
-            <button><%= f.submit "Remove", method: :delete, class: "border-red-600 rounded bg-red-600 button hover:bg-red-700 px-3 py-2 text-white" %></button>
+            <div class="my-2 mx-2"><%= f.select(:header, options_for_select([['Company Name', 0],['Country', 1], ['Region', 2], ['Description', 3], ['Last Funding', 4], ['Total Funding (USD)', 5]])) %></div>
+            <button><%= f.submit "Remove", method: :patch, class: "border-red-600 rounded bg-red-600 button hover:bg-red-700 px-3 py-2 text-white" %></button>
             </div>
         <% end %>
     <% end %>
@@ -38,7 +38,7 @@
             <th class="px-2 py-2 font-normal border"><%= datum.country_code %></th>
             <th class="px-2 py-2 font-normal border"><%= datum.region_name %></th>
             <th class="px-2 py-2 font-normal border"><%= datum.description %></th>
-            <th class="px-2 py-2 font-normal border"><%= datum.last_funding_on %></th>
+            <th class="px-2 py-2 font-normal border"><%= datum.last_funding_on.try(:strftime, ("%m/%d/20%y")) %></th>
             <th class="px-2 py-2 text-white bg-green-400">$<%= datum.total_funding_usd %></th>
             </tr>
             <% end %>

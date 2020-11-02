@@ -11,5 +11,6 @@ class Datum < ApplicationRecord
         end
         Datum.import data, recursive: true
     end
-    
+
+
 end

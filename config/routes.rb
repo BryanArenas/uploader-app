@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'data/import'
 
+  post 'data/delete' => 'datum#my_import'
+
   get 'data/import' => 'datum#my_import'
 
   resources :data do 

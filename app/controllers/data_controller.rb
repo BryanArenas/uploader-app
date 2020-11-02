@@ -1,5 +1,5 @@
 class DataController < ApplicationController
-
+  
 
   def index
     @data = Datum.all
@@ -20,4 +20,7 @@ class DataController < ApplicationController
       []
     end
   end
+
+  private
+
 end
