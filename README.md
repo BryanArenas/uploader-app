@@ -1,24 +1,28 @@
-# README
+Prerequisites
+The setups steps expect following tools installed on the system.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Github
+Ruby 2.6.3
+Rails 6.0.3
 
-Things you may want to cover:
+1. Check out the repository
 
-* Ruby version
+git clone git@github.com:organization/project-name.git
 
-* System dependencies
+2. Create database.yml file
 
-* Configuration
+Copy the sample database.yml file and edit the database configuration as required.
+cp config/database.yml.sample config/database.yml
 
-* Database creation
+3. Create and setup the database
+Run the following commands to create and setup the database.
 
-* Database initialization
+rails db:create
+rails db:setup
 
-* How to run the test suite
+4. Start the Rails server
+You can start the rails server using the command given below.
 
-* Services (job queues, cache servers, search engines, etc.)
+rails s
 
-* Deployment instructions
-
-* ...
+And now you can visit the site with the URL http://localhost:3000
