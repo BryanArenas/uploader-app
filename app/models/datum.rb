@@ -1,4 +1,5 @@
 class Datum < ApplicationRecord
+    
 
     require 'csv'
     require 'activerecord-import/base'

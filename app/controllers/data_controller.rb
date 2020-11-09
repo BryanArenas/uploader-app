@@ -23,4 +23,8 @@ class DataController < ApplicationController
 
   private
 
+  def datum_params
+    params.require(:datum).permit(attributes: [:country_code, :region_name, :company_name, :description, :last_funding_on, :total_funding_usd])
+  end
+
 end
