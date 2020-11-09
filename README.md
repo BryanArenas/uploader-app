@@ -7,7 +7,7 @@ Rails 6.0.3
 
 1. Check out the repository
 
-git clone git@github.com:organization/project-name.git
+git clone git@github.com/bryanarenas/uploader-app.git
 
 2. Create database.yml file
 
